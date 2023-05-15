@@ -43,9 +43,9 @@ topics_dictionary = {'математика': [перелік вже наявни
     output = ""
     for i in range(len(subtopics)):
         output += (str(i + 1) + ". " + subtopics[i] + "\n")
-    print_response(f'Ви прицюєте в блоці: ' + Fore.BLUE + '"*назва Вашої доданої теми*"' + Fore.RESET + '.\n' + Fore.RED +
-f'!' + Fore.RESET + 'при необхідності, Ви можете скористатися функціями: "допомога", "назад" та "вихід"'+ Fore.RED +'!\n'
-                   + Fore.BLUE +f'Список доступних підтем:\n'+ Fore.RESET +
+    print_response(f'Ви прицюєте в блоці: "*назва Вашої доданої теми*".\n' 
+                   f'!при необхідності, Ви можете скористатися функціями: "допомога", "назад" та "вихід"!\n'
+                   f'Список доступних підтем:\n'
                    f'{output}'
                    f'Введи номер однієї з підтем, допомога з якою тобі потрібна: ')
     while True:
@@ -77,21 +77,17 @@ f'!' + Fore.RESET + 'при необхідності, Ви можете скор
 **3.** Створіть новий def використовуючи наступний приклад:
 ```
 def print_cont_*the name of your added item*():
-    print_response('Чи бажаєте Ви продовжити працювати в блоці ' + Fore.BLUE + '"*назва Вашої доданої теми*"' + Fore.RESET +
-                   '?(так/ні)')
+    print_response('Чи бажаєте Ви продовжити працювати в блоці "*назва Вашої доданої теми*"?(так/ні)')
     while True:
         user_input = get_user_input().lower()
         if user_input == 'так':
             *the name of your added item*()
             break
         elif user_input == 'ні':
-            print_response("Ви можете задати мені питання з наступних тем: " + Fore.BLUE + f"""
-{', '.join(topics_dictionary.keys())}.""")
+            print_response(f"Ви можете задати мені питання з наступних тем: {', '.join(topics_dictionary.keys())}.")
             break
         else:
-            print_response(
-                'Будь ласка, дайте відповідь у форматі: ' + Fore.RED + '"так" ' + Fore.RESET + 'або ' + Fore.RESET +
-                Fore.RED + '"ні".' + Fore.RESET)
+            print_response('Будь ласка, дайте відповідь у форматі: "так" або "ні".')
             continue
 ```
 На кінець def *the name of your added item*() додайте:
@@ -111,4 +107,5 @@ break
         *the name of your added item*()
         continue
 ```
+*При власному бажанні, Ви можете використовувати бібліотеку Colorama, що допоможе Вам забарвити конктерні деталі Вашої з теми.*
 #### Сподіваюсь пояснення було достатньо зрозумілим і допоможе Вам у розширенні списку тем. ####
